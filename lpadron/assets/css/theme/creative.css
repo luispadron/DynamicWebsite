@@ -420,7 +420,7 @@ body {
 
 footer {
   background-color: #222222;
-  padding: 50px 0;
+  padding: 20px 0;
 }
 
 footer p {
@@ -434,4 +434,8 @@ footer p {
   top: .2em;
   font-size: 1.4em;
   color: #ff79c6;
+}
+
+.project-link {
+  color: #222222;
 }
