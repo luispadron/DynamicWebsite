@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+import misaka as m
 
 class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=False)
@@ -16,3 +17,9 @@ class Article(models.Model):
         if not self.id:
             self.slug = slugify(self.title)
         super(Article, self).save(*args, **kwargs)
+
+    def get_markdown(self):
+        return m.html(self.body)
+
+    class Meta:
+        ordering = ['-created_at']
