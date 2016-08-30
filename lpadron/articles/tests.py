@@ -44,3 +44,7 @@ class ArticleViewsTests(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertIn(self.article1, resp.context['articles'])
         self.assertIn(self.article2, resp.context['articles'])
+
+    def test_article_detail_view(self):
+        resp = self.client.get('/articles/', kwargs={'slug': self.article1.slug})
+        self.assertEqual(resp.status_code, 200)
