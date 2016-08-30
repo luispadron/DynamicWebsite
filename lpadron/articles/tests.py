@@ -30,6 +30,7 @@ class ArticleViewsTests(TestCase):
             slug = "a-title-for-a-test-article1",
             created_at = timezone.now(),
         )
+
         self.article2 = Article.objects.create(
             title = " A title2 for a test article",
             subtitle = "A subtitle2 for a test article",
@@ -44,6 +45,12 @@ class ArticleViewsTests(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertIn(self.article1, resp.context['articles'])
         self.assertIn(self.article2, resp.context['articles'])
+        # Template test
+        self.assertTemplateUsed(resp, 'articles/article_list.html')
+        self.assertContains(resp, self.article1.title)
+        self.assertContains(resp, self.article2.title)
+        self.assertContains(resp, self.article1.subtitle)
+        self.assertContains(resp, self.article2.subtitle)
 
     def test_article_detail_view(self):
         resp = self.client.get('/articles/', kwargs={'slug': self.article1.slug})
