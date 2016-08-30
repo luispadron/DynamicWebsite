@@ -6,6 +6,7 @@ class Article(models.Model):
     title = models.CharField(max_length=255)
     subtitle = models.CharField(max_length=140)
     body = models.TextField()
+    img_link = models.CharField(max_length=2000)
 
     def __str__(self):
         return self.title
