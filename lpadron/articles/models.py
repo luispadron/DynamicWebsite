@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
-import misaka as m
+from markdown_deux import markdown
+from django.utils.safestring import SafeString
 
 class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=False)
@@ -19,7 +20,7 @@ class Article(models.Model):
         super(Article, self).save(*args, **kwargs)
 
     def get_markdown(self):
-        return m.html(self.body)
+        return SafeString(markdown(self.body))
 
     class Meta:
         ordering = ['-created_at']
