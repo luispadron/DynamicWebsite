@@ -27,10 +27,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'articles',
     'markdown_deux',
     'pagedown',
+    'disqus',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -117,3 +121,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
+
+# Disqus API Keys
+try:
+    from . import local_settings
+    DISQUS_API_KEY = local_settings.disqus_key
+    DISQUS_WEBSITE_SHORTNAME = local_settings.disqus_short_name
+except ImportError:
+    print('local settings file not found')
