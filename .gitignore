@@ -18,3 +18,4 @@ tests/.coverage
 build/
 tests/report/
 site_env/
+local_settings.py
