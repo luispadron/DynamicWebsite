@@ -17,5 +17,6 @@ tests/coverage_html/
 tests/.coverage
 build/
 tests/report/
-site_env/
+devenv/
+prodenv/
 local_settings.py
