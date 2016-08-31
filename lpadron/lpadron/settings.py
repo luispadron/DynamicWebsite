@@ -1,5 +1,9 @@
 import os
 
+# Local file not in git to store api keys, db passwords, etc
+# REQUIRED
+from . import local_settings
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -11,7 +15,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'r__b4va1(m7mrcal+@rhk@po6q9$$o*0rg*xu&xute2vyyp$v$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -116,6 +120,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
 # Dirs for static files
 
 STATICFILES_DIRS = (
@@ -123,9 +129,5 @@ STATICFILES_DIRS = (
 )
 
 # Disqus API Keys
-try:
-    from . import local_settings
-    DISQUS_API_KEY = local_settings.disqus_key
-    DISQUS_WEBSITE_SHORTNAME = local_settings.disqus_short_name
-except ImportError:
-    print('local settings file not found')
+DISQUS_API_KEY = local_settings.disqus_key
+DISQUS_WEBSITE_SHORTNAME = local_settings.disqus_short_name
