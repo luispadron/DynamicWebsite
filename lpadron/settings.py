@@ -17,8 +17,8 @@ SECRET_KEY = '***REMOVED***'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['67.205.138.182', 'luispadron.com']
-
+ALLOWED_HOSTS = ['.luispadron.com']
+#ALLOWED_HOSTS = ['*']
 
 # Application definition
 
