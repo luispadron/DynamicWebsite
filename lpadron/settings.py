@@ -17,7 +17,7 @@ SECRET_KEY = '***REMOVED***'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['159.203.187.55']
 
 
 # Application definition
@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'lpadron.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'luispadrondb',
-        'USER': 'luispadron',
+        'NAME': 'websitedb',
+        'USER': 'admin',
         'PASSWORD': local_settings.site_db_password,
         'HOST': 'localhost',
         'PORT': '',
