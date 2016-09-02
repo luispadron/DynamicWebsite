@@ -13,9 +13,9 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-heading">
-          <h1>{{ article.title }}</h1>
-          <h2 class="subheading">{{ article.subtitle }}</h2>
-          <span class="meta">Posted on {{ article.created_at }}</span>
+          <h1 id="title">{{ article.title }}</h1>
+          <h2 id="subtitle" class="subheading">{{ article.subtitle }}</h2>
+          <span id="date" class="meta">Posted on {{ article.created_at }}</span>
         </div>
       </div>
     </div>
@@ -49,4 +49,19 @@
     </div>
   </div>
 </div>
+
+
+{% if article.shouldDarkenHeader %}
+<script type="text/javascript">
+  document.getElementById('title').style.color = "#222222"
+  document.getElementById('subtitle').style.color = "#222222"
+  document.getElementById('date').style.color = "#222222"
+  document.getElementById('name').style.color = "#222222";
+  document.getElementById('home-link').style.color = "#222222";
+  document.getElementById('about-link').style.color = "#222222";
+  document.getElementById('projects-link').style.color = "#222222";
+  document.getElementById('contact-link').style.color = "#222222";
+</script>
+{% endif %}
+
 {% endblock %}
