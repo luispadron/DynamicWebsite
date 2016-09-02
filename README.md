@@ -14,6 +14,6 @@ __Check it out [HERE](https://www.luispadron.com)__
 
 ## Credits
 
-CSS Theme: [StartBootstrap](startbootstrap.com)
+CSS Theme: [StartBootstrap](https://startbootstrap.com/)
 
 Icons: [Icons8](https://icons8.com)
