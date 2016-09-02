@@ -1,7 +1,8 @@
 from django.db import models
 from django.template.defaultfilters import slugify
-from markdown_deux import markdown
 from django.utils.safestring import SafeString
+
+import markdown
 
 class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=False)
@@ -21,7 +22,7 @@ class Article(models.Model):
         super(Article, self).save(*args, **kwargs)
 
     def get_markdown(self):
-        return SafeString(markdown(self.body))
+        return SafeString(markdown.markdown(self.body))
 
     class Meta:
         ordering = ['-created_at']

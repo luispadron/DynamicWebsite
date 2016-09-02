@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'articles',
-    'markdown_deux',
     'pagedown',
     'disqus',
 ]
