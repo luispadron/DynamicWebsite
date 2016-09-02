@@ -136,7 +136,3 @@ STATICFILES_DIRS = (
 # Disqus API Keys
 DISQUS_API_KEY = local_settings.disqus_key
 DISQUS_WEBSITE_SHORTNAME = local_settings.disqus_short_name
-
-# Google analytics
-GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-83584415-1'
-GOOGLE_ANALYTICS_DOMAIN = 'luispadron.com'
