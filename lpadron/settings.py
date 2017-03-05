@@ -17,6 +17,8 @@ SECRET_KEY = local_settings.secret_key
 
 ADMINS = [('Luis', 'luispadronn@gmail.com')]
 
+EMAIL_HOST = 'localhost'
+
 DEBUG = False
 
 ALLOWED_HOSTS = ['www.luispadron.com', 'luispadron.com', 'gradepoint.luispadron.com']
@@ -39,7 +41,7 @@ INSTALLED_APPS = [
     'disqus',
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
