@@ -21,3 +21,4 @@ devenv/
 prodenv/
 local_settings.py
 static/
+website.log

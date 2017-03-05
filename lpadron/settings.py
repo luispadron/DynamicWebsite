@@ -15,11 +15,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = local_settings.secret_key
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
+ADMINS = [('Luis', 'luispadronn@gmail.com')]
+
 DEBUG = False
 
-ALLOWED_HOSTS = ['.luispadron.com']
-#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.luispadron.com', 'luispadron.com', 'gradepoint.luispadron.com']
+
 
 # Application definition
 
@@ -136,3 +137,39 @@ STATICFILES_DIRS = (
 # Disqus API Keys
 DISQUS_API_KEY = local_settings.disqus_key
 DISQUS_WEBSITE_SHORTNAME = local_settings.disqus_short_name
+
+# Logging config
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'logfile': {
+            'level': 'WARNING',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join('', 'website.log'),
+            'maxBytes': 1024*1024*60,
+            'backupCount': '10'
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        'django': {
+            'handlers': ['logfile'],
+            'level': 'WARNING'
+        }
+    }
+}
