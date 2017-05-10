@@ -21,7 +21,7 @@ EMAIL_HOST = 'localhost'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.luispadron.com', 'luispadron.com', 'gradepoint.luispadron.com']
+ALLOWED_HOSTS = ['www.luispadron.com', 'luispadron.com', 'gradepoint.luispadron.com', '67.205.138.182', 'localhost']
 
 
 # Application definition
