@@ -1,9 +1,5 @@
 import os
 
-# Local file not in git to store api keys, db passwords, etc
-# REQUIRED
-from . import local_settings
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -12,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = local_settings.secret_key
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 ADMINS = [('Luis', 'luispadronn@gmail.com')]
@@ -82,7 +78,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'websitedb',
         'USER': 'admin',
-        'PASSWORD': local_settings.site_db_password,
+        'PASSWORD': os.environ.get('SECRET_KEY'),
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -137,8 +133,8 @@ STATICFILES_DIRS = (
 )
 
 # Disqus API Keys
-DISQUS_API_KEY = local_settings.disqus_key
-DISQUS_WEBSITE_SHORTNAME = local_settings.disqus_short_name
+DISQUS_API_KEY = os.environ.get('DISQUS_KEY')
+DISQUS_WEBSITE_SHORTNAME = os.environ.get('DISQUS_SHORT_NAME')
 
 # Logging config
 LOGGING = {

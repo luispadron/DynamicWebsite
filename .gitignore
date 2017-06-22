@@ -19,6 +19,6 @@ build/
 tests/report/
 devenv/
 prodenv/
-local_settings.py
+set_variables.sh
 static/
 website.log
