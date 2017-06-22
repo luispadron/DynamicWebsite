@@ -1,0 +1,1 @@
+web: gunicorn lpadron.wsgi --log-file -
