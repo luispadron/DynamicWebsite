@@ -1,15 +1,9 @@
-# Personal Website
+# Personal Website 
 
-This is my personal site where I talk about myself in order to impress employers.
-I also write some articles and stuff from time to time, because I love teaching as well.
+Personal website written using Python and Django.
+This code is no longer in use until I can afford to host again 😅
 
-The sites backend is written in Django.
-
-__Check it out [HERE](https://www.luispadron.com)__
-
-
-<br>
-<br>
+Look at the new codebase here, using GitHub pages and custom domain [here](https://github.com/luispadron/Personal-Static-Website)
 
 
 ## Credits
