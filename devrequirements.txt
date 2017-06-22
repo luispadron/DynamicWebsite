@@ -9,3 +9,4 @@ pbr
 pycparser
 six
 virtualenv
+gunicorn
